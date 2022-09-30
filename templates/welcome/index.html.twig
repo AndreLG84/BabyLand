@@ -12,7 +12,7 @@
         <p>Retrouvez les essentiels</p>
     </section>
 
-    <div class="ArticlesListWelcome">
+    <section class="ArticlesListWelcome">
         {% for dataArticle in WelcomeController %}
         <div class="ArtCards">
             <img src="{{ asset('assets/upload/products/' ~ dataArticle.image) }}">
@@ -22,7 +22,7 @@
             <a href="{{ path('app_show_article', {'id': dataArticle.id}) }}">Voir les détails</a>
         </div>
         {% endfor %}
-    </div>
+    </section>
 
     {% include 'includes/FrontGaranties.html.twig' %}
     {% include 'includes/FrontFooter.html.twig' %}

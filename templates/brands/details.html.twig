@@ -5,12 +5,10 @@
 {% block body %}
     {% include 'includes/FrontNav.html.twig' %}
     {% include 'includes/FrontSubMenu.html.twig' %}
-    
     {{ dump(BrandsController) }}
     {% for brand in BrandsController %}
-
-        <p>{{ brand.articleBrand.name }}</p>
-        
+        <p>{{ BrandsController.name }}</p>
+        <p>{{ BrandsController.id }}</p>
     {% endfor %}
 
     {% include 'includes/FrontGaranties.html.twig' %}

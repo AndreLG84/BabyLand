@@ -6,9 +6,15 @@
     {% include 'includes/FrontNav.html.twig' %}
     {% include 'includes/FrontSubMenu.html.twig' %}
     <section class="BrandsPage">
-        <h1> Retrouvez vos marques préferées</h1>
-        <p>les marques de puériculture:</p>
+        <figure class="BrandsTitle">
+            <img src="{{ asset('assets/images/choisir-siege-auto.png') }}">
+        </figure>
+        <div class="BrandsContent">
+            <h1> Retrouvez vos marques préferées</h1>
+            <p>les marques de puériculture:</p>
+        </div>
     </section>
+
     <section class="BrandsList">
         {% for dataBrands in BrandsController %}
             <div class="brands">

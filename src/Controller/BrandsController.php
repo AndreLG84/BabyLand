@@ -25,13 +25,15 @@ class BrandsController extends AbstractController
     #[Route('/infos_brand/{id}', name: 'app_show_brand')]
     public function watchBrand(int $id, MarqueRepository $MarqueRepository, ArticleRepository $ArticleRepository): Response
     {
+        $listArt = [];
+
         $infoBrand = $MarqueRepository ->find($id);
         $articleBrand = $ArticleRepository ->find($id);
 
-        $listArt = $infoBrand.$articleBrand;
+        $listArt []= $infoBrand.$articleBrand;
 
         return $this->render('brands/details.html.twig', [
-            'BrandsController' => $listArt,
+            'BrandsController' => $listArt[0],
         ]);
 
     }

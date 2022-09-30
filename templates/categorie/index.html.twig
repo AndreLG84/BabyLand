@@ -5,15 +5,27 @@
 {% block body %}
     {% include 'includes/FrontNav.html.twig' %}
     {% include 'includes/FrontSubMenu.html.twig' %}
-        <h1>Voir les categories</h1>
-        <section class="CategorieList">
-            {% for categorie in CategorieController %}
-                <div class="CategorieContent">
-                    <img src="{{ asset('assets/upload/products/' ~ categorie.image) }}">
+
+    <section class="CategorieTitle">
+        <figure class="CategorieImg">
+            <img src="{{ asset('assets/images/choisir-siege-auto.png') }}">
+        </figure>
+        <div class="CategorieT">
+            <h1>Voir les categories</h1>
+            <p>Retrouvez les essentiels</p>
+        </div>
+    </section>
+        
+    <section class="CategorieList">
+        {% for categorie in CategorieController %}
+            <div class="CategorieContent">
+                <img src="{{ asset('assets/upload/products/' ~ categorie.image) }}">
+                <div class="CategorieName">
                     <p>{{ categorie.name }}</p>
                 </div>
-            {% endfor %}
-        </section>
+            </div>
+        {% endfor %}
+    </section>
 
     {% include 'includes/FrontGaranties.html.twig' %}
     {% include 'includes/FrontFooter.html.twig' %}

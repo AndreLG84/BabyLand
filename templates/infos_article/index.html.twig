@@ -10,7 +10,6 @@
     <section class="articleTitle">
         <figure class="bgTitle">
             <img src="{{ asset('assets/images/choisir-siege-auto.png') }}">
-            <img src="{{ asset('assets/images/suppression.png') }}">
         </figure>
         <div class="articleContent">
             <h1>Liste de nos articles</h1>
@@ -23,7 +22,7 @@
         <div class="ListArticle">
             <img src="{{ asset('assets/upload/products/' ~ dataArticle.image) }}">
             <p>{{ dataArticle.name }}</p>
-            <a href="{{ path('app_show_article', {'id': dataArticle.id}) }}">Voir les détails</a>
+            <a href="{{ path('app_show_article', {'id': dataArticle.id}) }}">+ d'infos</a>
         </div>
     {% endfor %}
     </div>
