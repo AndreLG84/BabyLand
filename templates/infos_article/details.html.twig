@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}InfosArticleController!{% endblock %}
+
+{% block body %}
+    {% include 'includes/FrontNav.html.twig' %}
+    {% include 'includes/FrontSubMenu.html.twig' %}
+
+    <div class="details-0">
+        <div class="details-1">
+            <div class="details-1_0">
+                <img src="{{ asset('assets/upload/products/' ~ InfosArticleController.image) }}" alt="">
+            </div>
+            <div class="details-1_1">
+                <p>Categorie: {{ InfosArticleController.categorie }}</p><br>
+                <p>reference:{{ InfosArticleController.id }}</p>
+                <h2>{{ InfosArticleController.name }}</h2>
+                <p>Marque: {{ InfosArticleController.marque }}</p><br>
+                <p>{{ InfosArticleController.prix }}€</p>
+                <a href=" {{ path('cart_add', {id: InfosArticleController.id}) }} " class="btn btn-success"><i class="bi bi-cart-plus"></i>Ajouter</a>
+            </div>
+        </div>
+        <div class="details-2">
+            <h3>description detaillé</h3>
+            <p>{{ InfosArticleController.description }}</p>
+        </div>
+        <div class="details-3">
+            <h3>Les avis de nos clients</h3>
+        </div>
+        
+    </div>
+
+
+    {% include 'includes/FrontGaranties.html.twig' %}
+    {% include 'includes/FrontFooter.html.twig' %}
+{% endblock %}

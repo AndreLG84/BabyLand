@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Votre panier{% endblock %}
+
+{% block body %}
+{% include 'includes/FrontNav.html.twig' %}
+{% include 'includes/FrontSubMenu.html.twig' %}
+
+    <table class="table" style="min-height:100px">
+        <thead>
+            <tr>
+                <th>Article</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for element in dataPanier %}
+                <tr>
+                    <td>{{ element.panier.name }}</td>
+                    <td class="text-right"> {{ element.panier.prix }}€</td>
+                    <td>{{ element.quantite }}</td>
+                    <td>{{ element.quantite * element.panier.prix }}</td>
+                    <td>
+                        <a href="{{path("cart_add", {id: element.panier.id})}}" class="btn btn-success"><i class="bi bi-cart-plus">ajoutez</i></a>
+                    </td>
+                </tr>
+                {{ dump(element) }}
+            {% else %}
+                <tr>
+                    <td colspan="5" class="text-center">Votre panier est vide</td>
+               </tr> 
+            {% endfor %}
+        </tbody>
+    </table>
+    <section class="bg-light p-3">
+        <h1>Votre panier: {{ total }}€</h1>
+        <a href="{{path("cart_delete")}}" class="btn btn-danger">Supprimez tout<i class="bi bi-cart-x"></i></a>
+    </section>
+{% include 'includes/FrontGaranties.html.twig' %}
+{% include 'includes/FrontFooter.html.twig' %}
+{% endblock %}

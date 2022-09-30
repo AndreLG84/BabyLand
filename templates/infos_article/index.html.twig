@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tout les produits{% endblock %}
+
+{% block body %}
+    {% include 'includes/FrontNav.html.twig' %}
+    {% include 'includes/FrontSubMenu.html.twig' %}
+    {% include 'includes/FrontSearch.html.twig' %}
+    
+    <section class="articleTitle">
+        <figure class="bgTitle">
+            <img src="{{ asset('assets/images/choisir-siege-auto.png') }}">
+            <img src="{{ asset('assets/images/suppression.png') }}">
+        </figure>
+        <div class="articleContent">
+            <h1>Liste de nos articles</h1>
+            <p>les articles de puériculture:</p>
+        </div>
+    </section>
+
+    <div class="ArticleInfos">
+    {% for dataArticle in InfosArticleController %}
+        <div class="ListArticle">
+            <img src="{{ asset('assets/upload/products/' ~ dataArticle.image) }}">
+            <p>{{ dataArticle.name }}</p>
+            <a href="{{ path('app_show_article', {'id': dataArticle.id}) }}">Voir les détails</a>
+        </div>
+    {% endfor %}
+    </div>
+
+    {% include 'includes/FrontGaranties.html.twig' %}
+    {% include 'includes/FrontFooter.html.twig' %}
+{% endblock %}

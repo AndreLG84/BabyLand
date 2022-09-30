@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos Marques{% endblock %}
+
+{% block body %}
+    {% include 'includes/FrontNav.html.twig' %}
+    {% include 'includes/FrontSubMenu.html.twig' %}
+    
+    {{ dump(BrandsController) }}
+    {% for brand in BrandsController %}
+
+        <p>{{ brand.articleBrand.name }}</p>
+        
+    {% endfor %}
+
+    {% include 'includes/FrontGaranties.html.twig' %}
+    {% include 'includes/FrontFooter.html.twig' %}
+{% endblock %}

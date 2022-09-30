@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue sur BabyLand{% endblock %}
+
+{% block body %}
+    {% include 'includes/FrontNav.html.twig' %}
+    {% include 'includes/FrontSubMenu.html.twig' %}
+    {% include 'includes/FrontSlider.html.twig' %}
+
+    <section class="WelcomeTitle">
+        <h1>Produits phares</h1>
+        <p>Retrouvez les essentiels</p>
+    </section>
+
+    <div class="ArticlesListWelcome">
+        {% for dataArticle in WelcomeController %}
+        <div class="ArtCards">
+            <img src="{{ asset('assets/upload/products/' ~ dataArticle.image) }}">
+            <div class="ArtCardTitle">
+                <p>{{ dataArticle.name }}</p>
+            </div>
+            <a href="{{ path('app_show_article', {'id': dataArticle.id}) }}">Voir les détails</a>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% include 'includes/FrontGaranties.html.twig' %}
+    {% include 'includes/FrontFooter.html.twig' %}
+{% endblock %}
