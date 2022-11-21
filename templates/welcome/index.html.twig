@@ -15,11 +15,11 @@
     <section class="ArticlesListWelcome">
         {% for dataArticle in WelcomeController %}
         <div class="ArtCards">
-            <img src="{{ asset('assets/upload/products/' ~ dataArticle.image) }}">
             <div class="ArtCardTitle">
                 <p>{{ dataArticle.name }}</p>
             </div>
-            <a href="{{ path('app_show_article', {'id': dataArticle.id}) }}">Voir les détails</a>
+            <img src="{{ asset('assets/upload/products/' ~ dataArticle.image) }}">
+            <a href="{{ path('app_show_article', {'id': dataArticle.id}) }}">Plus d'infos</a>
         </div>
         {% endfor %}
     </section>

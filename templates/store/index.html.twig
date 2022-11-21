@@ -2,9 +2,35 @@
 
 {% block title %}Notre Magasin{% endblock %}
 
+
 {% block body %}
     {% include 'includes/FrontNav.html.twig' %}
     {% include 'includes/FrontSubMenu.html.twig' %}
+    <div class="StoreTitle">
+        <img src="{{ asset('assets/images/imageback1.png') }}">
+        <img src="{{ asset('assets/images/imageback1.png') }}">
+        <div class="StoreContent">
+            <h1>Mon titre</h1>
+        </div>
+    </div>
+    <p>lorem50</p><p>lorem50</p><p>lorem50</p><p>lorem50</p>
+
+    <div class="row info">
+			<div class="col-xs-12 col-sm-4 col-md-3" id="store_img">
+				<img class="img-responsive" src="/media/W1siZiIsIjIwMTcvMDUvMTcvNjFwOTRpc3ppMl9iZWJlXzlfbWFnYXNpbl9wdWVyaWN1bHR1cmUuanBnIl0sWyJwIiwidGh1bWIiLCIyNzB4MjEwXiJdXQ/bebe-9-magasin-puericulture.jpg?sha=01ad34829b08be23" alt="Bebe 9 magasin puericulture" />
+			</div>
+			<div class="col-xs-12 col-sm-4 horaires">
+			<p class="subtitle">Horaires :</p>
+			<ul class="list-unstyled">
+				<li><meta itemprop="openingHours" content="Mo 14:00-19:00">Lundi : 14h à 19h</li>
+				<li><meta itemprop="openingHours" content="Tu 14:00-19:00">Mardi : 10h à 12h et 14h à 19h</li>
+				<li><meta itemprop="openingHours" content="We 14:00-19:00">Mercredi : 10h à 12h et 14h à 19h</li>
+				<li><meta itemprop="openingHours" content="Th 14:00-19:00">Jeudi : 10h à 12h et 14h à 19h</li>
+				<li><meta itemprop="openingHours" content="Fr 14:00-19:00">Vendredi : 10h à 12h et 14h à 19h</li>
+				<li><meta itemprop="openingHours" content="Sa 14:00-19:00">Samedi : 10h à 12h et 14h à 19h</li>
+			</ul> 
+		</div>
+
     {% include 'includes/FrontFooter.html.twig' %}
 {% endblock %}
 

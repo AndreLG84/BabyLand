@@ -16,11 +16,8 @@ class CartController extends AbstractController
     public function index(SessionInterface $session, ArticleRepository $articleRepository)
     {
         $panier = $session->get("panier", []);
-
-        //on fabrique les données
         $dataPanier = [];
         $total = 0;
-        
         foreach($panier as $id => $quantite){
             $produit = $articleRepository->find($id);
             $dataPanier []  = [
@@ -29,7 +26,6 @@ class CartController extends AbstractController
             ];
             $total += $produit->getPrix() * $quantite;
         }
-
         return $this->render('cart/index.html.twig', compact("dataPanier", "total"));
     }
 
@@ -38,16 +34,13 @@ class CartController extends AbstractController
     {
         // on recupere le panier actuel
         $panier = $session->get("panier", []);
-
         if (!empty($panier[$id])){
             $panier[$id]++;
         }else{
             $panier[$id] = 1;
         }
-
         // on sauvegarde dans la session
         $session->set("panier", $panier);
-
         return $this->redirectToRoute("cart_index_");
     }
 
